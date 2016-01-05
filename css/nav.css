@@ -95,6 +95,10 @@ header > * {
     background-size: 100% 100%;
   }
 
+  header .current-link::before {
+    background-image: url('../images/dot_current.svg');
+  }
+
   .small-header-link::before {
     height: 14px;
     top: 15px;
@@ -155,6 +159,10 @@ header > * {
     color: #777;
   }
 
+  header .current-link {
+    color: #4078c0;
+  }
+
   header a::before {
     position: absolute;
     content: '';
@@ -163,6 +171,10 @@ header > * {
     background-image: url('../images/dot.svg');
     background-size: 100% 100%;
     bottom: 30px;
+  }
+
+  header .current-link::before {
+    background-image: url('../images/dot_current.svg');
   }
 
   .small-header-link::before {
