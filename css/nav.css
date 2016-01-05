@@ -47,6 +47,10 @@ header > * {
   margin: 0;
 }
 
+#home-link:hover h1, #home-link:hover h2 {
+  color: #4078c0;
+}
+
 @media (max-width: 410px) {
   header, header::before {
     height: 44px;
@@ -101,7 +105,7 @@ header > * {
     background-size: 100% 100%;
   }
 
-  header .current-link::before {
+  header .current-link::before, header a:hover::before {
     background-image: url('../images/dot_current.svg');
   }
 
@@ -165,7 +169,7 @@ header > * {
     color: #777;
   }
 
-  header .current-link {
+  header .current-link, header a:hover {
     color: #4078c0;
   }
 
@@ -179,7 +183,7 @@ header > * {
     bottom: 30px;
   }
 
-  header .current-link::before {
+  header .current-link::before, header a:hover::before {
     background-image: url('../images/dot_current.svg');
   }
 

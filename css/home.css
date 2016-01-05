@@ -51,6 +51,14 @@
   bottom: 40px;
 }
 
+.projects-size:hover::before {
+  background-image: url('../images/dot_current.svg');
+}
+
+.projects-size:hover {
+  color: #4078c0;
+}
+
 .projects-size-small::before {
   height: 14px;
 }
