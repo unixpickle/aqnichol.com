@@ -1,6 +1,7 @@
 #content {
   position: absolute;
   top: 90px;
+  z-index: 0;
 }
 
 @media (max-width: 410px) {

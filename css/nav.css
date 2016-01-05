@@ -21,6 +21,7 @@ header::before {
 header {
   position: fixed;
   top: 0;
+  z-index: 1;
 }
 
 @media (max-width: 630px) {
@@ -39,6 +40,11 @@ header {
 
 header > * {
   position: relative;
+}
+
+#home-link {
+  padding: 0;
+  margin: 0;
 }
 
 @media (max-width: 410px) {
