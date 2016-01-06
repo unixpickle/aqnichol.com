@@ -22,9 +22,23 @@
     this._currentIndex = 0;
     this._imageView.src = this._imageURLs[0];
 
+    this._pageDotsElement = document.createElement('div');
+    this._pageDotsElement.className = 'screenshots-page-dots';
+    this._pageDots = [];
+    for (var i = 0; i < this._count; ++i) {
+      var dot = document.createElement('div');
+      dot.className = 'screenshots-page-dot';
+      if (i === 0) {
+        dot.className += ' screenshots-page-dot-current';
+      }
+      this._pageDots.push(dot);
+      this._pageDotsElement.appendChild(dot);
+    }
+
     this._element.appendChild(this._imageView);
     this._element.appendChild(this._leftArrow);
     this._element.appendChild(this._rightArrow);
+    this._element.appendChild(this._pageDotsElement);
 
     this.layout();
     window.addEventListener('resize', this.layout.bind(this));
@@ -39,20 +53,24 @@
   Screenshots.prototype.layout = function() {
     var arrowWidth = this._leftArrow.offsetWidth;
     var arrowHeight = this._leftArrow.offsetHeight;
+    var dotsWidth = this._pageDotsElement.offsetWidth;
+    var dotsHeight = this._pageDotsElement.offsetHeight;
 
     var width = this._element.offsetWidth;
     var contentWidth = Math.max(1, width-(2*arrowWidth));
     var contentHeight = (contentWidth / this._size.width) * this._size.height;
-    var height = Math.max(arrowHeight, contentHeight);
+    var height = Math.max(arrowHeight, contentHeight+dotsHeight);
 
     this._imageView.style.height = contentHeight;
-    this._imageView.style.top = 'calc(50% - ' + Math.round(contentHeight / 2) + 'px)';
+    this._imageView.style.top = 'calc(50% - ' + Math.round((contentHeight+dotsHeight) / 2) + 'px)';
     this._imageView.style.left = 'calc(50% - ' + Math.round(contentWidth / 2) + 'px)';
     this._imageView.style.width = Math.round(contentWidth) + 'px';
     this._imageView.style.height = Math.round(contentHeight) + 'px';
 
     this._leftArrow.style.left = 'calc(50% - ' + Math.round(contentWidth/2 + arrowWidth) + 'px)';
     this._rightArrow.style.right = 'calc(50% - ' + Math.round(contentWidth/2 + arrowWidth) + 'px)';
+
+    this._pageDotsElement.style.left = 'calc(50% - ' + Math.round(dotsWidth / 2) + 'px)';
 
     this._element.style.height = Math.ceil(height) + 'px';
   };
@@ -70,11 +88,14 @@
     if (this._loading) {
       return;
     }
+    this._pageDots[this._currentIndex].className = 'screenshots-page-dot';
     this._loading = true;
     this._currentIndex = (this._currentIndex + addition) % this._imageURLs.length;
     while (this._currentIndex < 0) {
       this._currentIndex += this._imageURLs.length;
     }
+    this._pageDots[this._currentIndex].className = 'screenshots-page-dot ' +
+      'screenshots-page-dot-current';
     fadeAnimation(this._imageView, 1, 0, Screenshots.FADE_OUT_DURATION, function() {
       var boundDoneHandler;
       boundDoneHandler = function() {
