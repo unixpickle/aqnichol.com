@@ -4,6 +4,7 @@
     this._element = element;
     this._name = this.readParameter('name');
     this._count = parseInt(this.readParameter('count'));
+    this._overlayDots = this.readParameter('overlay-dots') === 'true';
     this._size = parseDimensions(this.readParameter('size'));
     this._element.innerHTML = '';
 
@@ -54,7 +55,10 @@
     var arrowWidth = this._leftArrow.offsetWidth;
     var arrowHeight = this._leftArrow.offsetHeight;
     var dotsWidth = this._pageDotsElement.offsetWidth;
-    var dotsHeight = this._pageDotsElement.offsetHeight;
+    var dotsHeight = Math.max(0, this._pageDotsElement.offsetHeight);
+    if (this._overlayDots) {
+      dotsHeight = 0;
+    }
 
     var width = this._element.offsetWidth;
     var contentWidth = Math.max(1, width-(2*arrowWidth));
