@@ -17,36 +17,32 @@
   color: #4078c0;
 }
 
+.account label {
+  cursor: pointer;
+}
+
 .account-icon {
   display: block;
   width: 50px;
   height: 50px;
 
-  background-size: 100% 100%;
+  background-size: 100% 200%;
+}
+
+.account:hover .account-icon {
+  background-position: 0 100%;
 }
 
 .account-icon-github {
   background-image: url('../images/github.svg');
 }
 
-.account:hover .account-icon-github {
-  background-image: url('../images/github_hover.svg');
-}
-
 .account-icon-twitter {
   background-image: url('../images/twitter.svg');
 }
 
-.account:hover .account-icon-twitter {
-  background-image: url('../images/twitter_hover.svg');
-}
-
 .account-icon-email {
   background-image: url('../images/email.svg');
-}
-
-.account:hover .account-icon-email {
-  background-image: url('../images/email_hover.svg');
 }
 
 #projects-sizes {
