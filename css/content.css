@@ -25,6 +25,7 @@
 }
 
 .pane {
+  position: relative;
   box-sizing: border-box;
   padding: 10px;
   background-color: white;
@@ -59,4 +60,24 @@
 
 .pane a:hover {
   color: #4078c0;
+}
+
+.pane .github-link {
+  overflow: hidden;
+  color: transparent;
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-image: url('../images/github.svg');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100% 200%;
+  width: 22px;
+  height: 22px;
+}
+
+.pane .github-link:hover {
+  color: transparent;
+  background-position: 0 100%;
 }
