@@ -26,6 +26,10 @@
   background-position: 0 100%;
 }
 
+.screenshots-arrow:focus {
+  outline: 0;
+}
+
 .screenshots-arrow-left {
   background-image: url('../images/left.svg');
 }
@@ -54,6 +58,7 @@
   display: table;
   position: absolute;
   height: 10px;
+  padding-top: 10px;
   bottom: 0;
 }
 
