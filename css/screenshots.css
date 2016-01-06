@@ -2,6 +2,12 @@
   position: relative;
   width: 100%;
   margin: 10px 0 0 0;
+
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .screenshots-image {
