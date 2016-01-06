@@ -94,6 +94,7 @@ header .current-link::before, header a:hover::before {
     height: 44px;
     line-height: 44px;
     font-size: 25px;
+    color: #777;
   }
 
   header h2 {
