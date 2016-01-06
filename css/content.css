@@ -81,3 +81,7 @@
   color: transparent;
   background-position: 0 100%;
 }
+
+.pane .apparent-link {
+  text-decoration: underline;
+}
