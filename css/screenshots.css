@@ -6,6 +6,7 @@
 
 .screenshots-image {
   position: absolute;
+  cursor: pointer;
 }
 
 .screenshots-arrow {
@@ -67,6 +68,7 @@
   background-image: url('../images/page_dot.svg');
   width: 10px;
   height: 10px;
+  cursor: pointer;
 }
 
 .screenshots-page-dot-current {

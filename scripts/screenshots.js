@@ -46,6 +46,8 @@
 
     this._loading = false;
     this.registerArrowEvents();
+    this.registerDotEvents();
+    this.registerImageEvents();
   }
 
   Screenshots.FADE_OUT_DURATION = 200;
@@ -112,6 +114,24 @@
       this._imageView.addEventListener('load', boundDoneHandler);
       this._imageView.addEventListener('error', boundDoneHandler);
       this._imageView.src = this._imageURLs[this._currentIndex];
+    }.bind(this));
+  };
+
+  Screenshots.prototype.registerDotEvents = function() {
+    for (var i = 0, len = this._pageDots.length; i < len; ++i) {
+      var dot = this._pageDots[i];
+      dot.addEventListener('click', function(i) {
+        if (this._loading || this._currentIndex === i) {
+          return;
+        }
+        this.moveSlideshow(i - this._currentIndex);
+      }.bind(this, i));
+    }
+  };
+
+  Screenshots.prototype.registerImageEvents = function() {
+    this._imageView.addEventListener('click', function() {
+      window.open(this._imageView.src, '_blank').focus();
     }.bind(this));
   };
 
