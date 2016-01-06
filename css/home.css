@@ -75,14 +75,15 @@
   position: absolute;
   content: '';
   display: block;
-  width: 100%;
   background-image: url('../images/dot.svg');
-  background-size: 100% 100%;
+  background-size: 100% 200%;
+  background-position: 0 0;
+  background-repeat: no-repeat;
   bottom: 40px;
 }
 
 .projects-size:hover::before {
-  background-image: url('../images/dot_current.svg');
+  background-position: 0 100%;
 }
 
 .projects-size:hover {
@@ -91,12 +92,18 @@
 
 .projects-size-small::before {
   height: 14px;
+  width: 14px;
+  left: calc(50% - 7px);
 }
 
 .projects-size-medium::before {
   height: 20px;
+  width: 20px;
+  left: calc(50% - 10px);
 }
 
 .projects-size-large::before {
   height: 26px;
+  width: 26px;
+  left: calc(50% - 13px);
 }

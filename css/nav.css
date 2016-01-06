@@ -51,6 +51,38 @@ header > * {
   color: #4078c0;
 }
 
+header a::before {
+  position: absolute;
+  content: '';
+  display: block;
+  background-image: url('../images/dot.svg');
+  background-size: 100% 200%;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+header .current-link::before, header a:hover::before {
+  background-position: 0 100%;
+}
+
+.small-header-link::before {
+  height: 14px;
+  width: 14px;
+  left: calc(50% - 7px);
+}
+
+.medium-header-link::before {
+  height: 20px;
+  width: 20px;
+  left: calc(50% - 10px);
+}
+
+.large-header-link::before {
+  height: 26px;
+  width: 26px;
+  left: calc(50% - 13px);
+}
+
 @media (max-width: 410px) {
   header, header::before {
     height: 44px;
@@ -96,31 +128,15 @@ header > * {
     width: 26px;
   }
 
-  header a::before {
-    position: absolute;
-    content: '';
-    display: block;
-    width: 100%;
-    background-image: url('../images/dot.svg');
-    background-size: 100% 100%;
-  }
-
-  header .current-link::before, header a:hover::before {
-    background-image: url('../images/dot_current.svg');
-  }
-
   .small-header-link::before {
-    height: 14px;
     top: 15px;
   }
 
   .medium-header-link::before {
-    height: 20px;
     top: 12px;
   }
 
   .large-header-link::before {
-    height: 26px;
     top: 9px;
   }
 }
@@ -174,28 +190,6 @@ header > * {
   }
 
   header a::before {
-    position: absolute;
-    content: '';
-    display: block;
-    width: 100%;
-    background-image: url('../images/dot.svg');
-    background-size: 100% 100%;
     bottom: 30px;
-  }
-
-  header .current-link::before, header a:hover::before {
-    background-image: url('../images/dot_current.svg');
-  }
-
-  .small-header-link::before {
-    height: 14px;
-  }
-
-  .medium-header-link::before {
-    height: 20px;
-  }
-
-  .large-header-link::before {
-    height: 26px;
   }
 }
