@@ -21,6 +21,7 @@ header::before {
 }
 
 header {
+  text-align: center;
   position: fixed;
   top: 0;
   z-index: 1;
@@ -45,49 +46,15 @@ header {
   }
 }
 
-header > * {
-  position: relative;
-}
-
-#home-link {
+#title-container {
   padding: 0;
   margin: 0;
-}
 
-#home-link:hover h1, #home-link:hover h2 {
-  color: #4078c0;
-}
+  display: inline-block;
+  position: relative;
 
-header a::before {
-  position: absolute;
-  content: '';
-  display: block;
-  background-image: url('../images/dot.svg');
-  background-size: 100% 200%;
-  background-position: 0 0;
-  background-repeat: no-repeat;
-}
-
-header .current-link::before, header a:hover::before {
-  background-position: 0 100%;
-}
-
-.small-header-link::before {
-  height: 14px;
-  width: 14px;
-  left: calc(50% - 7px);
-}
-
-.medium-header-link::before {
-  height: 20px;
-  width: 20px;
-  left: calc(50% - 10px);
-}
-
-.large-header-link::before {
-  height: 26px;
-  width: 26px;
-  left: calc(50% - 13px);
+  text-decoration: none;
+  color: #777;
 }
 
 @media (max-width: 410px) {
@@ -106,46 +73,6 @@ header .current-link::before, header a:hover::before {
 
   header h2 {
     display: none;
-  }
-
-  header nav {
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
-  header a {
-    display: inline-block;
-    position: relative;
-    float: left;
-    height: 44px;
-    color: transparent;
-    padding: 0 10px;
-  }
-
-  .small-header-link {
-    width: 14px;
-  }
-
-  .medium-header-link {
-    width: 20px;
-  }
-
-  .large-header-link {
-    width: 26px;
-  }
-
-  .small-header-link::before {
-    top: 15px;
-  }
-
-  .medium-header-link::before {
-    top: 12px;
-  }
-
-  .large-header-link::before {
-    top: 9px;
   }
 }
 
@@ -168,36 +95,5 @@ header .current-link::before, header a:hover::before {
     padding: 0;
     font-size: 18px;
     font-weight: 300;
-  }
-
-  header nav {
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
-  header a {
-    position: relative;
-    display: inline-block;
-    float: left;
-
-    padding: 50px 0 0 0;
-    margin: 0 0 0 20px;
-    line-height: 25px;
-
-    font-size: 16px;
-    font-weight: 300;
-
-    text-decoration: none;
-    color: #777;
-  }
-
-  header .current-link, header a:hover {
-    color: #4078c0;
-  }
-
-  header a::before {
-    bottom: 30px;
   }
 }
