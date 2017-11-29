@@ -57,25 +57,6 @@ header {
   color: #777;
 }
 
-@media (max-width: 410px) {
-  header, header::before {
-    height: 44px;
-  }
-
-  header h1 {
-    margin: 0;
-    padding: 0;
-    height: 44px;
-    line-height: 44px;
-    font-size: 25px;
-    color: #777;
-  }
-
-  header h2 {
-    display: none;
-  }
-}
-
 @media (min-width: 410px) {
   header, header::before {
     height: 80px;
@@ -95,5 +76,24 @@ header {
     padding: 0;
     font-size: 18px;
     font-weight: 300;
+  }
+}
+
+@media (max-width: 410px) {
+  header, header::before {
+    height: 44px;
+  }
+
+  header h1 {
+    margin: 0;
+    padding: 0;
+    height: 44px;
+    line-height: 44px;
+    font-size: 25px;
+    color: #777;
+  }
+
+  header h2 {
+    display: none;
   }
 }
